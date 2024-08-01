@@ -96,7 +96,6 @@ public class FiniteAutomaton {
 
                 // Read number of states
                 int numOfStates = Integer.parseInt(line.trim());
-                //System.out.println(numOfStates);
 
                 // Initialize set of states
                 int[] states = new int[numOfStates];
@@ -134,7 +133,7 @@ public class FiniteAutomaton {
                 // Create the finite automaton
                 FiniteAutomaton fa = new FiniteAutomaton(finalStates, alphabet, transitions);
 
-                // Read and test input strings
+                // List out the FA's tuple
                 System.out.println("Inputted Finite State Automaton Info:");
                 System.out.print("    1) set of states: ");
                 System.out.print(Arrays.toString(states));
@@ -146,7 +145,8 @@ public class FiniteAutomaton {
                 for (Transition transition : transitions) {
                     System.out.printf("         %d %c %d\n", transition.fromState, transition.symbol, transition.toState);
                 }
-
+                
+                // Read and test input strings
                 System.out.println("Results of test strings:");
                 for (String testString = reader.readLine(); !(".".equals(testString)); testString = reader.readLine()) {
                     System.out.printf("     %-11s", testString);
